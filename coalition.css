@@ -1,0 +1,151 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.background-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+.first-header,
+.text-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.first-header .logo,
+.first-header .links,
+.text-section .logo,
+.text-section .links {
+  margin: 0 20px;
+}
+
+#first-background {
+  background-image: url("Pictures/home.png");
+}
+
+#second-background {
+  background-image: url("Pictures/home2.png");
+}
+
+#third-background {
+  background-image: url("Pictures/home3.png");
+}
+
+.text-section {
+  background-color: white;
+  height: 10vh;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+}
+
+.header .logo {
+  height: 50px;
+  width: auto;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+}
+
+.scroll-link {
+  text-decoration: underline;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.scroll-link:last-child {
+  margin-right: 0;
+}
+
+.header-link {
+  color: #fff;
+}
+
+.light-blue-section {
+  background-color: rgba(64, 94, 141, 0.802);
+  height: 27vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  width: 60%;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: all 0.5s ease;
+}
+
+.carousel-container img {
+  width: calc(25% - 10px);
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header .logo {
+    height: 40px;
+  }
+
+  .links a {
+    font-size: 24px;
+    margin-left: 10px;
+  }
+
+  .text-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel {
+    width: 90%;
+  }
+
+  .carousel img {
+    width: 50%;
+  }
+
+  .light-blue-section,
+  .background-container,
+  .text-section {
+    padding: 10px;
+  }
+
+  .desktop-links {
+    display: none;
+  }
+  .mobile-links {
+    display: flex;
+  }
+}

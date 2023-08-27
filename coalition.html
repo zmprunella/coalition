@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Skills Test</title>
+    <link rel="stylesheet" href="coalition.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let isDragging = false;
+        let startPos = 0;
+        let scrollLeft = 0;
+
+        const carousel = document.querySelector(".carousel");
+
+        carousel.addEventListener("mousedown", (e) => {
+          isDragging = true;
+          startPos = e.pageX - carousel.offsetLeft;
+          scrollLeft = carousel.scrollLeft;
+        });
+
+        carousel.addEventListener("mouseup", () => {
+          isDragging = false;
+        });
+
+        carousel.addEventListener("mouseleave", () => {
+          isDragging = false;
+        });
+
+        carousel.addEventListener("mousemove", (e) => {
+          if (!isDragging) return;
+          e.preventDefault();
+          const x = e.pageX - carousel.offsetLeft;
+          const scroll = x - startPos;
+          carousel.scrollLeft = scrollLeft - scroll;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="background-container" id="first-background">
+      <header class="header first-header">
+        <img src="Pictures/Logo.png" alt="Logo" class="logo" />
+
+        <div class="links mobile-links">
+          <a href="#second-background" class="scroll-link header-link"
+            >01.History</a
+          >
+          <a href="#third-background" class="scroll-link header-link"
+            >02.Team</a
+          >
+        </div>
+      </header>
+    </div>
+
+    <div class="text-section">
+      <img src="Pictures/Logo2.png" alt="Logo" class="logo" />
+
+      <div class="links mobile-links">
+        <div class="accordion">Menu</div>
+        <div class="panel">
+          <a href="#second-background" class="scroll-link">01.History</a>
+          <a href="#third-background" class="scroll-link">02.Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="background-container" id="second-background"></div>
+    <div class="light-blue-section">
+      <div class="carousel">
+        <div class="carousel-container">
+          <img src="Pictures/car.png" alt="Image 1" />
+          <img src="Pictures/car1.png" alt="Image 2" />
+          <img src="Pictures/car.png" alt="Image 3" />
+          <img src="Pictures/car1.png" alt="Image 4" />
+          <img src="Pictures/car.png" alt="Image 5" />
+          <img src="Pictures/car1.png" alt="Image 6" />
+          <img src="Pictures/car.png" alt="Image 7" />
+          <img src="Pictures/car1.png" alt="Image 8" />
+          <img src="Pictures/car.png" alt="Image 9" />
+          <img src="Pictures/car1.png" alt="Image 10" />
+          <img src="Pictures/car.png" alt="Image 11" />
+          <img src="Pictures/car1.png" alt="Image 12" />
+        </div>
+      </div>
+    </div>
+    <div class="background-container" id="third-background"></div>
+  </body>
+</html>
